@@ -80,7 +80,8 @@
             small
             outlined
             class="mt-1"
-            href="https://github.com/wuhan-support/"
+            href="https://github.com/wuhan-support/certificate-verify"
+            target="_blank"
           >
             <v-icon left small>
               mdi-github

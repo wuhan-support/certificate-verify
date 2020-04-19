@@ -3,11 +3,23 @@ import Validity from '@/models/validity'
 
 describe('verifier.ts', () => {
   it('should report success when providing good signature', () => {
-    return verifySignature(
-      '王冰',
-      '产品部 | 网页团队',
-      'wl4EABEIABAFAl6aFPYJED7IL6RyrW1uAAAAUwEAVhmKldiQxfsW2SvLmyLmFFOn_HMqNPSO80Z6Kri2y7J0BAOkMJpEh5OqtLkE8HdAKV7gaeslZ7BitvyAXZIx/UBE/_=YG89'
-    )
+    return new Promise((resolve, reject) => {
+      verifySignature(
+        '王冰',
+        '产品部 | 网页团队',
+        'wl4EABEIABAFAl6aFPYJED7IL6RyrW1uAAAAUwEAVhmKldiQxfsW2SvLmyLmFFOn_HMqNPSO80Z6Kri2y7J0BAOkMJpEh5OqtLkE8HdAKV7gaeslZ7BitvyAXZIx/UBE/_=YG89'
+      )
+        .then((validity) => {
+          if (validity === Validity.OK) {
+            resolve()
+          } else {
+            reject(validity)
+          }
+        })
+        .catch((err) => {
+          reject(err)
+        })
+    })
   })
   it('should fail when providing bad signature', () => {
     return new Promise((resolve, reject) => {
@@ -16,8 +28,8 @@ describe('verifier.ts', () => {
         '产品部 | 网页团队',
         'wl4dajsfklasdjflasdfjadslfasjfaoewhfnajsfndsaoafjasdljkflasjdf_HMqNPSO80Z6Kri2y7J0BAOkMJpEh5OqtLkE8HdAKV7gaeslZ7BitvyAXZIx/UBE/_=YG89'
       )
-        .then(() => {
-          reject()
+        .then((validity) => {
+          reject(validity)
         })
         .catch(() => {
           resolve()
@@ -32,14 +44,14 @@ describe('verifier.ts', () => {
           '产品部 | 网页团队',
           ''
         )
-          .then(() => {
-            reject()
+          .then((validity) => {
+            reject(validity)
           })
           .catch((err) => {
             if (err === Validity.ILLEGAL_ARGUMENTS) {
               resolve()
             } else {
-              reject()
+              reject(err)
             }
           })
       }),
@@ -49,14 +61,14 @@ describe('verifier.ts', () => {
           '',
           'a'
         )
-          .then(() => {
-            reject()
+          .then((validity) => {
+            reject(validity)
           })
           .catch((err) => {
             if (err === Validity.ILLEGAL_ARGUMENTS) {
               resolve()
             } else {
-              reject()
+              reject(err)
             }
           })
       }),
@@ -66,14 +78,14 @@ describe('verifier.ts', () => {
           'a',
           'a'
         )
-          .then(() => {
-            reject()
+          .then((validity) => {
+            reject(validity)
           })
           .catch((err) => {
             if (err === Validity.ILLEGAL_ARGUMENTS) {
               resolve()
             } else {
-              reject()
+              reject(err)
             }
           })
       })

@@ -13,7 +13,7 @@
     </div>
     <v-card v-if="result !== 3" class="anim">
       <v-fade-transition>
-        <v-overlay absolute v-if="result === 0 || result === 2" opacity="0.9" class="stripped-background">
+        <v-overlay absolute v-if="result === 0 || result === 2" opacity="0.9" :class="`${result !== 0 ? 'stripped-' : ''}background anim`">
           <div class="d-flex flex-column justify-center">
             <v-progress-circular indeterminate class="mx-auto" v-if="result === 0" />
             <v-icon x-large v-else>
@@ -66,22 +66,6 @@
               </v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
-
-<!--          <v-list-item>-->
-<!--            <v-list-item-icon>-->
-<!--              <v-icon>-->
-<!--                mdi-draw-->
-<!--              </v-icon>-->
-<!--            </v-list-item-icon>-->
-<!--            <v-list-item-content>-->
-<!--              <v-list-item-title>-->
-<!--                {{ args.signature }}-->
-<!--              </v-list-item-title>-->
-<!--              <v-list-item-subtitle>-->
-<!--                {{ $t('field.signature') }}-->
-<!--              </v-list-item-subtitle>-->
-<!--            </v-list-item-content>-->
-<!--          </v-list-item>-->
         </v-list>
       </v-card-text>
     </v-card>
@@ -187,7 +171,9 @@ export default class Verifier extends Vue {
             this.result = Validity.ILLEGAL_ARGUMENTS
           } else {
             sleep(Math.random() * 3000 + 1000)
-            this.result = Validity.SIGNATURE_MISMATCH
+              .then(() => {
+                this.result = Validity.SIGNATURE_MISMATCH
+              })
           }
         })
     }
@@ -195,6 +181,9 @@ export default class Verifier extends Vue {
 </script>
 
 <style scoped>
+  .background {
+    background: rgba(0, 0, 0, 0.6)
+  }
 .stripped-background {
   background: repeating-linear-gradient(
     -45deg,

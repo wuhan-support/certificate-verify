@@ -71,7 +71,6 @@ ${sign.split('_').join('\n')}
       signature: pgpSignature
     })
       .then((result) => {
-        console.info('verification result', result)
         if (result && result.signatures.length === 1 && result.signatures[0].valid) {
           return resolve(Validity.OK)
         } else {
