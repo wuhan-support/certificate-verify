@@ -1,0 +1,49 @@
+{
+  "app": {
+    "name": "Digital Signature Verification",
+    "overline": "wuhan.support Volunteer Certificate",
+    "slogan": [
+      "Science",
+      "Openness",
+      "Support"
+    ]
+  },
+  "footer": {
+    "eula": "End-user License Agreement",
+    "privacy": "Privacy Policy",
+    "team": "wuhan.support Organization",
+    "source": "Source"
+  },
+  "menu": {
+    "languages": "Language"
+  },
+  "verifier": {
+    "details": {
+      "title": "Personnel Information",
+      "subtitle": "The verification result on this page is calculated based on the information as shown as below."
+    },
+    "statuses": [
+      {
+        "title": "Calculating...",
+        "subtitle": "Calculating validity of the digital signature..."
+      },
+      {
+        "title": "Certificate is Trusted",
+        "subtitle": "The digital signature on the certificate is valid."
+      },
+      {
+        "title": "Invalid Signature",
+        "subtitle": "Digital Signature on the certificate has failed to be validated."
+      },
+      {
+        "title": "Missing Mandatory Parameters",
+        "subtitle": "Failed to verify certificate integrity: missing mandatory parameters."
+      }
+    ]
+  },
+
+  "field": {
+    "name": "Name",
+    "group": "Team"
+  }
+}

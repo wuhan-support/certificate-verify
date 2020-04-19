@@ -1,4 +1,4 @@
-# wuhan-support-cert-verify
+# wuhan-support-cert-verifier
 
 ## Project setup
 ```

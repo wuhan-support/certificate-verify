@@ -1,0 +1,49 @@
+{
+  "app": {
+    "name": "数字签名验证",
+    "overline": "wuhan.support 志愿者证书",
+    "slogan": [
+      "驰援一线",
+      "传递温暖"
+    ]
+  },
+  "footer": {
+    "eula": "最终用户许可协议",
+    "privacy": "隐私声明",
+    "team": "wuhan.support 团队",
+    "source": "源代码"
+  },
+  "menu": {
+    "languages": "语言选择"
+  },
+
+  "verifier": {
+    "details": {
+      "title": "验证信息",
+      "subtitle": "本页面的验证结果是根据下列信息进行计算的"
+    },
+    "statuses": [
+      {
+        "title": "正在计算",
+        "subtitle": "正在计算数字签名真实性，请稍候..."
+      },
+      {
+        "title": "证书为真",
+        "subtitle": "证书数字签名验证成功"
+      },
+      {
+        "title": "数字签名无效",
+        "subtitle": "证书数字签名验证失败：数字签名无效"
+      },
+      {
+        "title": "缺失必要参数",
+        "subtitle": "证书数字签名验证失败：缺失必要参数"
+      }
+    ]
+  },
+
+  "field": {
+    "name": "姓名",
+    "group": "组别"
+  }
+}
