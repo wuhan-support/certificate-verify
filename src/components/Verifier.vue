@@ -186,6 +186,7 @@ export default class Verifier extends Vue {
           if (error === Validity.ILLEGAL_ARGUMENTS) {
             this.result = Validity.ILLEGAL_ARGUMENTS
           } else {
+            sleep(Math.random() * 3000 + 1000)
             this.result = Validity.SIGNATURE_MISMATCH
           }
         })
