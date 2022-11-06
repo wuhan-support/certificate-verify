@@ -77,7 +77,7 @@ export default class LocaleSwitcher extends Vue {
     changeLocale (localeId) {
       this.$i18n.locale = localeId
       this.$vuetify.lang.current = localeId
-      document.title = `${this.$t('app.name')} | wuhan.support`
+      document.title = `${this.$t('app.name')} | covid-19.icu`
       document.documentElement.lang = localeId
     }
 }

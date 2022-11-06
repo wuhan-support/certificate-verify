@@ -64,7 +64,7 @@
         <v-card-text>
           <span>
             <a
-              href="https://wuhan.support"
+              href="https://covid-19.icu"
               target="_blank"
               style="text-decoration: none;"
             >
@@ -118,7 +118,7 @@ export default class App extends Vue {
 
     this.$i18n.locale = language
     this.$vuetify.lang.current = language
-    document.title = `${this.$t('app.name')} | wuhan.support`
+    document.title = `${this.$t('app.name')} | covid-19.icu`
     document.documentElement.lang = language
   }
 
